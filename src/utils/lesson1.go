@@ -6,7 +6,7 @@ import (
 )
 
 func Isdiv(a int) {
-	if (a % 2) == 0 {
+	if a%2 == 0 {
 		fmt.Println("Number is 2k")
 	} else {
 		fmt.Println("Number is 2k + 1")
@@ -14,7 +14,7 @@ func Isdiv(a int) {
 }
 
 func Isdiv3(a int) {
-	if (a % 3) == 0 {
+	if a%3 == 0 {
 		fmt.Println("Number is divisible by 3")
 	} else {
 		fmt.Println("Number is not divisible by 3")
