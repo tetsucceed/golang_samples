@@ -19,6 +19,7 @@ func main() {
 		utils.Isdiv3(333)
 		utils.Fibb100()
 		utils.Primes()
+		os.Exit(0)
 	}
 
 	if lessonNum == 2 {
@@ -51,5 +52,8 @@ func main() {
 		}
 
 		fmt.Println(fifo.Pop(), fifo.Pop()) // pop-pop
+		os.Exit(0)
 	}
+
+	fmt.Println("Hello World")
 }
