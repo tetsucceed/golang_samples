@@ -55,5 +55,11 @@ func main() {
 		os.Exit(0)
 	}
 
+	if lessonNum == 4 {
+		utils.ChessKnight()
+		utils.AddressBook()
+		utils.Calculator()
+	}
+
 	fmt.Println("Hello World")
 }
