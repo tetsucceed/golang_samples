@@ -24,6 +24,7 @@ func main() {
 
 	real_port := fmt.Sprintf(":%d", port)
 
+	// TODO: rewrite it with gin
 	http.HandleFunc("/hello", lesson6.SimpleHandler)
 	log.Fatal(http.ListenAndServe(real_port, nil))
 
