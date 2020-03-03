@@ -21,10 +21,8 @@ func SimpleHandler(w http.ResponseWriter, r *http.Request) {
 	name, status := r.URL.Query()["name"]
 
 	if !status || len(name[0]) < 1 {
-		html_text = fmt.Sprintf(html_text, "World!", "World!")
-		log.Println(fmt.Fprintf(w, html_text))
+		log.Println(fmt.Fprintf(w, html_text, "World!", "World!"))
 		return
 	}
-	html_text = fmt.Sprintf(html_text, name[0], name[0])
-	log.Println(fmt.Fprintf(w, html_text))
+	log.Println(fmt.Fprintf(w, html_text, name[0], name[0]))
 }
