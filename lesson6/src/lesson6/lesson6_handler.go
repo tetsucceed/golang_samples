@@ -7,11 +7,24 @@ import (
 )
 
 func SimpleHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html")
+	html_text := `<doctype html>
+	<html>
+	<head>
+	<title>Hello %s</title>
+	</head>
+	<body>
+		Hello %s
+	</body>
+	</html>`
+
 	name, status := r.URL.Query()["name"]
 
 	if !status || len(name[0]) < 1 {
-		log.Println(fmt.Fprintf(w, "name parameter is not set"))
+		html_text = fmt.Sprintf(html_text, "World!", "World!")
+		log.Println(fmt.Fprintf(w, html_text))
 		return
 	}
-	log.Println(fmt.Fprintf(w, "Hi there, I love %s!", name[0]))
+	html_text = fmt.Sprintf(html_text, name[0], name[0])
+	log.Println(fmt.Fprintf(w, html_text))
 }
