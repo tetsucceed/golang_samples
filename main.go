@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -59,6 +60,25 @@ func main() {
 		utils.ChessKnight()
 		utils.AddressBook()
 		utils.Calculator()
+	}
+
+	if lessonNum == 5 {
+		utils.SampleReadFile()
+		utils.ReadSampleCsv()
+		utils.WriteSampleCsv("out.csv")
+
+		flag.Parse()
+		if len(flag.Args()) < 3 {
+			fmt.Println(flag.Arg(1))
+			log.Fatal("usage: cp [fileName] [newFileName]")
+		} else if len(flag.Args()) == 3 {
+			switch flag.Arg(0) {
+			case "cp":
+				filename1 := flag.Arg(1)
+				filename2 := flag.Arg(2)
+				utils.CopyFile(filename1, filename2)
+			}
+		}
 	}
 
 	fmt.Println("Hello World")
